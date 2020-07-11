@@ -58,9 +58,9 @@ color_options = [
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
+app.title = "世界の統計地図"
 app.layout = dbc.Container(
     [
-        html.Title("世界の統計地図"),
         html.Div([
             html.H4("世界の統計地図"),
             html.Div([
