@@ -5,6 +5,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
+from dash_table.Format import Format, Group, Scheme, Symbol
 
 import pandas as pd
 import world_bank_data as wbd
@@ -60,7 +61,7 @@ server = app.server
 app.layout = dbc.Container(
     [
         html.Div([
-            html.H4("世界の分布"),
+            html.H4("世界の統計地図"),
             html.Div([
                 dcc.Dropdown(
                     id='item-dropdown',
@@ -166,7 +167,17 @@ def render_content(active_tab, item, year, color):
                             'if': {'column_id': c},
                             'textAlign': 'left'
                         } for c in ['Country', 'id', 'region']
-                    ]
+                    ],
+                    style_data_conditional = [
+                        {
+                            'if': {'row_index': 'odd'},
+                            'backgroundColor': 'rgb(248, 248, 248)'
+                        },
+                    ],
+                    style_header={
+                        'backgroundColor': 'rgb(230, 230, 230)',
+                        'fontWeight': 'bold'
+                    }
                 )
             ]
         )
