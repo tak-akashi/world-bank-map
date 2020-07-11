@@ -20,7 +20,9 @@ _df.columns = ['一人当たりGDP(ドル)', '平均寿命(歳)', '人口(人）
 df_all_countries = wbd.get_countries()
 df = pd.merge(_df.reset_index(), df_all_countries.reset_index(), left_on='Country', right_on='name')
 df = df[df['region'] != 'Aggregates'].reset_index(drop=True)
+df = df.drop(['iso2Code','name', 'adminregion', 'incomeLevel', 'lendingType', 'capitalCity', 'longitude','latitude'], axis=1).reset_index(drop=True)
 df['Year'] = df['Year'].astype(int)
+
 year_options = [{'label':str(year), 'value':year} for year in df['Year'].unique()]
 item_options = [{'label':x, 'value':x} for x in ['一人当たりGDP(ドル)', '平均寿命(歳)', '人口(人）']]
 color_options = [
@@ -113,7 +115,6 @@ def render_content(active_tab, item, year, color):
 
     df_selected = df[df['Year'] == year]
     df_selected = df_selected.sort_values(item, ascending=False).reset_index(drop=True).reset_index()
-    df_selected = df_selected.drop(['iso2Code','name', 'adminregion', 'incomeLevel', 'lendingType', 'capitalCity', 'longitude','latitude'], axis=1).reset_index(drop=True)
     df_selected['index'] = df_selected['index'].apply(lambda x: x + 1)
 
     if active_tab == 'graph':
