@@ -60,6 +60,7 @@ server = app.server
 
 app.layout = dbc.Container(
     [
+        html.Title("世界の統計地図"),
         html.Div([
             html.H4("世界の統計地図"),
             html.Div([
