@@ -52,7 +52,7 @@ color_options = [
     'teal', 'teal_r', 'tealgrn', 'tealgrn_r', 'tealrose', 'tealrose_r', 
     'tempo', 'tempo_r', 'temps', 'temps_r', 'thermal', 'thermal_r', 
     'tropic', 'tropic_r', 'turbid', 'turbid_r', 'twilight',  'twilight_r', 
-    'viridis', 'viridis_r', 'ylgn', 'ylgn_r', 'ylgnbu', 'ylgnbu_r','ylorbr', 'ylorbr_r'
+    'viridis', 'viridis_r', 'ylgn', 'ylgn_r', 'ylgnbu', 'ylgnbu_r','ylorbr', 'ylorbr_r',
     'ylorrd', 'ylorrd_r']
 ]
 
