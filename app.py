@@ -63,6 +63,9 @@ app.layout = dbc.Container(
         html.Div([
             html.H4("世界の統計地図"),
             html.Div([
+                html.P("データ元: 世界銀行")
+            ], style={"text-align": "right"}),
+            html.Div([
                 dcc.Dropdown(
                     id='item-dropdown',
                     options=item_options,
@@ -82,7 +85,7 @@ app.layout = dbc.Container(
                     options=color_options,
                     value='aggrnyl'
                 )
-            ], style={'width':'15%', 'marginLeft':'35%','marginRight':'0%','display':'inline-block'}),            
+            ], style={'width':'20%', 'marginLeft':'30%','marginRight':'0%','display':'inline-block'}),            
             dbc.Tabs(
                 [
                     dbc.Tab(label='グラフ', tab_id="graph"),
