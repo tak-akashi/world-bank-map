@@ -74,21 +74,21 @@ app.layout = dbc.Container(
                     options=item_options,
                     value='一人当たりGDP(ドル)'
                 )
-            ], style={'width':'25%', 'marginLeft':'0%', 'marginRight':'0%', 'display':'inline-block'}),
+            ], style={'width':'25%', 'marginLeft':'0%', 'marginRight':'0%', 'display':'inline-block', 'textAlign':'left'}),
             html.Div([
                 dcc.Dropdown(
                     id='year-dropdown',
                     options=year_options,
                     value=df['Year'].max()
                 )
-            ], style={'width':'15%', 'marginLeft':'1%','marginRight':'9%','display':'inline-block'}),
+            ], style={'width':'15%', 'marginLeft':'1%','marginRight':'9%','display':'inline-block', 'textAlign':'left'}),
             html.Div([
                 dcc.Dropdown(
                     id='color-dropdown',
                     options=color_options,
                     value='aggrnyl'
                 )
-            ], style={'width':'20%', 'marginLeft':'30%','marginRight':'0%','display':'inline-block'}),            
+            ], style={'width':'20%', 'marginLeft':'30%','marginRight':'0%','display':'inline-block','textAlign':'left'}),            
             dbc.Tabs(
                 [
                     dbc.Tab(label='グラフ', tab_id="graph"),
